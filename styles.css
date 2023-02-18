@@ -1,1 +1,96 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    display: flex;
+    flex-direction: row;
+}
+.App nav{
+    display: flex;
+    height: 70px;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: 0 1px 2px 0 rgba(133, 133, 133, 0.2), 0 1px 2px 0 rgba(111, 111, 111, 0.2);
+}
+
+.type{
+    font-size: 13px;
+    font-weight: 700;
+    color: rgb(60, 60, 60);
+    margin: 25px;
+}
+
+.icon-holder img{
+    height: 50px;
+    width: 50px;
+    margin: 10px 50px;
+}
+
+nav input{
+    height : 20px;
+    margin: 20px 120px;
+    background-color: rgb(243, 243, 243);
+    text-align: center;
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.cart-holder{
+    margin-top: 20px;
+    margin-left: 300px;
+}
+.cart-list-length{
+    margin-top: 20px;
+    color: red;
+}
+.cart-holder img{
+    height:20px;
+    width:20px;
+}
+#filter-holder{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(200, 200, 200);
+    box-shadow: 0 1px 2px 0 rgba(133, 133, 133, 0.2), 0 1px 2px 0 rgba(111, 111, 111, 0.2);
+    width: 25%;
+    height : 300px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-right: 15px;
+}
+
+form{
+    margin: 10px 30px;
+}
+label{
+    margin: 0px 10px;
+}
+#content{
+    margin: 10px;
+}
+.product-tile-holder{
+    display: flex;
+    flex-flow: row wrap;
+}
+.indiv-tile-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width : 200px;
+    margin: 7px;
+}
+.indiv-tile-holder img{
+    height: 210px;
+    width : 165px;
+    margin-bottom: 3px;
+}
+.indiv-tile-holder p{
+    font-size: 12px;
+}
+.sort-holder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0px;
+}
 
