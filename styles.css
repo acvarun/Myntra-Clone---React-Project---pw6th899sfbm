@@ -9,6 +9,7 @@ body{
 }
 .App nav{
     display: flex;
+    align-items: center;
     height: 70px;
     border: 1px solid rgb(200, 200, 200);
     box-shadow: 0 1px 2px 0 rgba(133, 133, 133, 0.2), 0 1px 2px 0 rgba(111, 111, 111, 0.2);
@@ -29,14 +30,20 @@ body{
 }
 
 nav input{
-    height : 20px;
-    margin: 20px 120px;
+    height : 30px;
+    margin: 10px;
     background-color: rgb(243, 243, 243);
     text-align: center;
     border: 1px solid grey;
     border-radius: 5px;
 }
-
+nav button{
+    height: 30px;
+    width: 60px;
+    background-color: lightcyan;
+    border:1px solid grey;
+    border-radius: 10px;
+}
 .cart-holder{
     margin-top: 20px;
     margin-left: 300px;
