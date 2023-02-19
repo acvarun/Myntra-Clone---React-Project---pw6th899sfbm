@@ -3798,6 +3798,10 @@ const Products=[
         },
         "mediaData": []
       }]
+Products.sort((a,b)=>{
+  return (a.year < b.year) ? 1 : (a.year > b.year) ? -1 : 0
+})
+
 const menFilt=Products.filter((product)=>{
         return product.gender==="Men"
     })
@@ -3821,38 +3825,39 @@ let sel1=true
 let sel2=false
 let sel3=false
 let id=0
+
 for(var i=0;i<Products.length;i++){
-    let node = document.createElement("div")
-    node.setAttribute('class','indiv-tile-holder')
-    document.getElementsByClassName('product-tile-holder')[0].appendChild(node)
-    let img = document.createElement("img")
-    img.setAttribute("src",Products[i].searchImage)
-    node.appendChild(img)
-    let h5 = document.createElement("h5")
-    node.appendChild(h5)
-    let textnodeh5 = document.createTextNode(Products[i].brand)
-    h5.appendChild(textnodeh5)
-    let p=document.createElement("p")
-    node.appendChild(p)
-    let textnodep = document.createTextNode(Products[i].additionalInfo)
-    p.appendChild(textnodep)
-    let div=document.createElement("div")
-    node.appendChild(div)
-    let span1=document.createElement("span")
-    let s=document.createElement("s")
-    let span2=document.createElement("span")
-    div.appendChild(span1)
-    let textnodespan1=document.createTextNode(Products[i].price)
-    span1.appendChild(textnodespan1)
-    div.appendChild(s)
-    let textnodes=document.createTextNode(Products[i].mrp)
-    s.appendChild(textnodes)
-    div.appendChild(span2)
-    let textnodespan2=document.createTextNode(Products[i].discountDisplayLabel)
-    span2.appendChild(textnodespan2)
-    span2.style.color="red"
-    node.setAttribute("id",Products[i].productId)
-    node.setAttribute("onclick", "handleClick(id)")
+  let node = document.createElement("div")
+  node.setAttribute('class','indiv-tile-holder')
+  document.getElementsByClassName('product-tile-holder')[0].appendChild(node)
+  let img = document.createElement("img")
+  img.setAttribute("src",Products[i].searchImage)
+  node.appendChild(img)
+  let h5 = document.createElement("h5")
+  node.appendChild(h5)
+  let textnodeh5 = document.createTextNode(Products[i].brand)
+  h5.appendChild(textnodeh5)
+  let p=document.createElement("p")
+  node.appendChild(p)
+  let textnodep = document.createTextNode(Products[i].additionalInfo)
+  p.appendChild(textnodep)
+  let div=document.createElement("div")
+  node.appendChild(div)
+  let span1=document.createElement("span")
+  let s=document.createElement("s")
+  let span2=document.createElement("span")
+  div.appendChild(span1)
+  let textnodespan1=document.createTextNode(Products[i].price)
+  span1.appendChild(textnodespan1)
+  div.appendChild(s)
+  let textnodes=document.createTextNode(Products[i].mrp)
+  s.appendChild(textnodes)
+  div.appendChild(span2)
+  let textnodespan2=document.createTextNode(Products[i].discountDisplayLabel)
+  span2.appendChild(textnodespan2)
+  span2.style.color="red"
+  node.setAttribute("id",Products[i].productId)
+  node.setAttribute("onclick", "handleClick(id)")
 }   
 
 function initialpageMen(){
@@ -3971,7 +3976,6 @@ function check(){
 }
 
 function handleChange(){
- 
   if(document.getElementById("male").checked){
     men=true
     women=false
@@ -3980,23 +3984,27 @@ function handleChange(){
     men=false
     women=true
   }
-  if(document.getElementById("select1").value==="What's New"){
+  if(document.getElementById("selection").value==="What's New"){
     sel1=true
     sel2=false
     sel3=false
     
   }
-  else if(document.getElementById("select2").value==="Price low to high"){
+  else if(document.getElementById("selection").value==="Price low to high"){
     sel1=false
     sel2=true
     sel3=false
     
   }
-  else if(document.getElementById("select3").value==="Better Discount"){
+  else if(document.getElementById("selection").value==="Better Discount"){
     sel1=false
     sel2=false
     sel3=true
     
+  }
+  let list = document.getElementsByClassName('product-tile-holder')[0];
+  while (list.hasChildNodes()) {
+    list.removeChild(list.firstChild);
   }
   if(men){
     let sortedarray1=[...menFilt]
@@ -4004,7 +4012,6 @@ function handleChange(){
       sortedarray1.sort((a,b)=>{
         return (a.year < b.year) ? 1 : (a.year > b.year) ? -1 : 0
       })
-      console.log(sel1)
     }
     else if(sel2){
       sortedarray1.sort((a,b)=>{
@@ -4016,22 +4023,7 @@ function handleChange(){
         return ((a.mrp-a.price) < (b.mrp-b.price)) ? 1 : ((a.mrp-a.price) > (b.mrp-b.price)) ? -1 : 0
       })
     }
-    let div=document.getElementsByClassName("indiv-tile-holder")
-    for(let i=0;i<div.length;i++){
-      let array=false
-      for(let j=0;j<sortedarray1.length;j++){
-        if(div[i].id==sortedarray1[j].productId){
-            array=true
-            break;
-        }
-      }
-      if(array){
-          div[i].style.display="flex"
-      }
-      else{
-          div[i].style.display="none"
-      }
-    }
+    sortedstart(sortedarray1)
   }
   else if(women){
     let sortedarray2=[...womenFilt]
@@ -4050,22 +4042,8 @@ function handleChange(){
         return ((a.mrp-a.price) < (b.mrp-b.price)) ? 1 : ((a.mrp-a.price) > (b.mrp-b.price)) ? -1 : 0
       })
     }
-    let div=document.getElementsByClassName("indiv-tile-holder")
-    for(let i=0;i<div.length;i++){
-      let array=false
-      for(let j=0;j<sortedarray2.length;j++){
-        if(div[i].id==sortedarray2[j].productId){
-            array=true
-            break;
-        }
-      }
-      if(array){
-          div[i].style.display="grid"
-      }
-      else{
-          div[i].style.display="none"
-      }
-    }
+    
+    sortedstart(sortedarray2)
   }
 }
 
@@ -4098,11 +4076,21 @@ function handleClick1(e){
     if(e==="male"){
         men=true
         women=false
+        let list = document.getElementsByClassName('product-tile-holder')[0];
+        while (list.hasChildNodes()) {
+          list.removeChild(list.firstChild);
+        }
+        sortedstart(menFilt)
         initialpageMen()
     }
     else if(e==="female"){
         women=true
         men=false
+        let list = document.getElementsByClassName('product-tile-holder')[0];
+        while (list.hasChildNodes()) {
+          list.removeChild(list.firstChild);
+        }
+        sortedstart(womenFilt)
         initialpageWomen()
         }
     
@@ -4238,5 +4226,41 @@ function buy(){
   document.getElementById("success").style.display="block"
   num=0
   document.getElementsByClassName("cart-list-length")[0].innerHTML=num
-  
+
+}
+
+function sortedstart(selectedarray){
+  for(var i=0;i<selectedarray.length;i++){
+    let node = document.createElement("div")
+    node.setAttribute('class','indiv-tile-holder')
+    document.getElementsByClassName('product-tile-holder')[0].appendChild(node)
+    let img = document.createElement("img")
+    img.setAttribute("src",selectedarray[i].searchImage)
+    node.appendChild(img)
+    let h5 = document.createElement("h5")
+    node.appendChild(h5)
+    let textnodeh5 = document.createTextNode(selectedarray[i].brand)
+    h5.appendChild(textnodeh5)
+    let p=document.createElement("p")
+    node.appendChild(p)
+    let textnodep = document.createTextNode(selectedarray[i].additionalInfo)
+    p.appendChild(textnodep)
+    let div=document.createElement("div")
+    node.appendChild(div)
+    let span1=document.createElement("span")
+    let s=document.createElement("s")
+    let span2=document.createElement("span")
+    div.appendChild(span1)
+    let textnodespan1=document.createTextNode(selectedarray[i].price)
+    span1.appendChild(textnodespan1)
+    div.appendChild(s)
+    let textnodes=document.createTextNode(selectedarray[i].mrp)
+    s.appendChild(textnodes)
+    div.appendChild(span2)
+    let textnodespan2=document.createTextNode(selectedarray[i].discountDisplayLabel)
+    span2.appendChild(textnodespan2)
+    span2.style.color="red"
+    node.setAttribute("id",selectedarray[i].productId)
+    node.setAttribute("onclick", "handleClick(id)")
+  }   
 }
