@@ -427,10 +427,6 @@ const Products=[
           "src": "http://assets.myntassets.com/assets/images/17771248/2023/1/9/c323dd62-6ec0-4878-8c6b-a154585c17f91673245056931-Sztori-Men-Kurtas-3231673245056560-1.jpg"
         },
         {
-          "view": "size_representation",
-          "src": ""
-        },
-        {
           "view": "back",
           "src": "http://assets.myntassets.com/assets/images/17771248/2023/1/9/dd58ce8f-3191-4495-9b3c-2175023c5e7c1673245056903-Sztori-Men-Kurtas-3231673245056560-3.jpg"
         },
@@ -453,6 +449,10 @@ const Products=[
         {
           "view": "left",
           "src": "http://assets.myntassets.com/assets/images/17771248/2023/1/9/c96e3f10-8719-4667-a7d8-b8f2defe55f21673245056876-Sztori-Men-Kurtas-3231673245056560-5.jpg"
+        },
+        {
+          "view": "size_representation",
+          "src": ""
         }
       ],
       "gender": "Men",
@@ -532,10 +532,6 @@ const Products=[
           "src": "http://assets.myntassets.com/assets/images/2050688/2022/1/25/09d1916a-220b-4ee6-aaa4-1be6b0ddd1911643088426039-HIGHLANDER-Men-White-Slim-Fit-Casual-Shirt-6141643088425880-5.jpg"
         },
         {
-          "view": "size_representation",
-          "src": ""
-        },
-        {
           "view": "back",
           "src": "http://assets.myntassets.com/assets/images/2050688/2018/2/5/11517823120304-HIGHLANDER-Men-White-Slim-Fit-Solid-Casual-Shirt-5911517823120124-3.jpg"
         },
@@ -554,6 +550,10 @@ const Products=[
         {
           "view": "top",
           "src": "http://assets.myntassets.com/assets/images/2050688/2022/3/11/45f11a57-c7f7-4499-9386-53fc64a1e6061646999259263-HIGHLANDER-Men-White-Slim-Fit-Casual-Shirt-7391646999259197-6.jpg"
+        },
+        {
+          "view": "size_representation",
+          "src": ""
         }
       ],
       "gender": "Men",
@@ -916,10 +916,6 @@ const Products=[
           "src": "http://assets.myntassets.com/assets/images/2127876/2017/11/23/11511431472564-Roadster-Men-Black-Regular-Fit-Solid-Casual-Shirt-8801511431472500-5.jpg"
         },
         {
-          "view": "size_representation",
-          "src": ""
-        },
-        {
           "view": "back",
           "src": "http://assets.myntassets.com/assets/images/2127876/2017/11/23/11511431472596-Roadster-Men-Black-Regular-Fit-Solid-Casual-Shirt-8801511431472500-3.jpg"
         },
@@ -934,6 +930,10 @@ const Products=[
         {
           "view": "search",
           "src": "http://assets.myntassets.com/assets/images/2127876/2017/11/23/11511431472633-Roadster-Men-Black-Regular-Fit-Solid-Casual-Shirt-8801511431472500-1.jpg"
+        },
+        {
+          "view": "size_representation",
+          "src": ""
         }
       ],
       "gender": "Men",
@@ -1179,10 +1179,6 @@ const Products=[
           "src": "http://assets.myntassets.com/assets/images/7488103/2019/8/22/b7868593-94f4-4b6e-97de-931733a74a0f1566454100581-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-5.jpg"
         },
         {
-          "view": "size_representation",
-          "src": ""
-        },
-        {
           "view": "back",
           "src": "http://assets.myntassets.com/assets/images/7488103/2019/8/22/7142624c-9184-47db-bf67-5610bd756c761566454100661-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-1.jpg"
         },
@@ -1193,6 +1189,10 @@ const Products=[
         {
           "view": "right",
           "src": "http://assets.myntassets.com/assets/images/7488103/2019/8/22/a158d792-8e7d-44ed-a5bf-5b229dc5c98c1566454100598-Dennis-Lingo-Men-Green-Slim-Fit-Solid-Casual-Shirt-358156645-4.jpg"
+        },
+        {
+          "view": "size_representation",
+          "src": ""
         }
       ],
       "gender": "Men",
@@ -1691,10 +1691,6 @@ const Products=[
           "src": "http://assets.myntassets.com/assets/images/8480731/2019/4/8/d5d0a2e3-3626-4655-a2c9-93716b8351401554705559847-THE-BEAR-HOUSE-Men-White-Club-Slim-Fit-Solid-Semiformal-Shir-5.jpg"
         },
         {
-          "view": "size_representation",
-          "src": ""
-        },
-        {
           "view": "back",
           "src": "http://assets.myntassets.com/assets/images/8480731/2019/4/8/913741c9-ec5e-4c54-87a3-67b84140542a1554705559879-THE-BEAR-HOUSE-Men-White-Club-Slim-Fit-Solid-Semiformal-Shir-3.jpg"
         },
@@ -1705,6 +1701,10 @@ const Products=[
         {
           "view": "right",
           "src": "http://assets.myntassets.com/assets/images/8480731/2019/4/8/9a643320-2a4a-4541-b5d3-0d7343d92fdb1554705559860-THE-BEAR-HOUSE-Men-White-Club-Slim-Fit-Solid-Semiformal-Shir-4.jpg"
+        },
+        {
+          "view": "size_representation",
+          "src": ""
         }
       ],
       "gender": "Men",
@@ -1812,10 +1812,6 @@ const Products=[
           "src": "http://assets.myntassets.com/assets/images/11958628/2020/7/30/340e1f4a-9c93-4dbb-a5e2-9d68d4f3a5741596107210870-Roadster-Men-Shirts-8201596107208557-1.jpg"
         },
         {
-          "view": "size_representation",
-          "src": ""
-        },
-        {
           "view": "back",
           "src": "http://assets.myntassets.com/assets/images/11958628/2020/7/30/258952ee-49d2-4182-a09e-d801b5afa3691596107210652-Roadster-Men-Shirts-8201596107208557-3.jpg"
         },
@@ -1838,6 +1834,10 @@ const Products=[
         {
           "view": "left",
           "src": "http://assets.myntassets.com/assets/images/11958628/2020/7/30/b93c274a-8324-42ea-af5e-3153e2b0d4b41596107210452-Roadster-Men-Shirts-8201596107208557-5.jpg"
+        },
+        {
+          "view": "size_representation",
+          "src": ""
         }
       ],
       "gender": "Men",
@@ -1932,10 +1932,6 @@ const Products=[
             "src": "http://assets.myntassets.com/assets/images/21748490/2023/1/30/7e845576-99aa-4885-a6bf-eb46bcb69f2f1675050463107ATUNWomenFuchsiaRelaxedPartyShirt1.jpg"
           },
           {
-            "view": "size_representation",
-            "src": ""
-          },
-          {
             "view": "back",
             "src": "http://assets.myntassets.com/assets/images/21748490/2023/1/30/d1eae6c8-8f32-4b95-9a01-50ff64681d3f1675050463120ATUNWomenFuchsiaRelaxedPartyShirt3.jpg"
           },
@@ -1962,6 +1958,10 @@ const Products=[
           {
             "view": "right",
             "src": "http://assets.myntassets.com/assets/images/21748490/2023/1/30/12e3cea3-f974-418c-8e6b-3ac5fd11c1ba1675050463157ATUNWomenFuchsiaRelaxedPartyShirt4.jpg"
+          },
+          {
+            "view": "size_representation",
+            "src": ""
           }
         ],
         "gender": "Women",
@@ -2563,10 +2563,6 @@ const Products=[
             "src": "http://assets.myntassets.com/assets/images/16154712/2021/11/18/564e9eab-9535-4e80-901d-dac699b01dff1637214641596SHAYEWomenWhiteOpaqueCasualShirt5.jpg"
           },
           {
-            "view": "size_representation",
-            "src": ""
-          },
-          {
             "view": "back",
             "src": "http://assets.myntassets.com/assets/images/16154712/2021/11/18/e4969bf3-7f55-4c12-bd85-cff485b49d2e1637214641604SHAYEWomenWhiteOpaqueCasualShirt3.jpg"
           },
@@ -2577,6 +2573,10 @@ const Products=[
           {
             "view": "front",
             "src": "http://assets.myntassets.com/assets/images/16154712/2021/11/18/addba225-1716-44eb-afcc-1f4bffd34e181637214641986SHAYEWomenWhiteOpaqueCasualShirt2.jpg"
+          },
+          {
+            "view": "size_representation",
+            "src": ""
           }
         ],
         "gender": "Women",
@@ -2684,10 +2684,6 @@ const Products=[
             "src": "http://assets.myntassets.com/assets/images/14615110/2021/9/10/c4351ed5-9b83-41da-b81e-05faae0a13051631265003631-Roadster-Women-Shirts-6201631265003003-1.jpg"
           },
           {
-            "view": "size_representation",
-            "src": ""
-          },
-          {
             "view": "back",
             "src": "http://assets.myntassets.com/assets/images/14615110/2021/9/10/42881c12-530c-4394-ac71-5a9e2e87aa471631265003610-Roadster-Women-Shirts-6201631265003003-3.jpg"
           },
@@ -2710,6 +2706,10 @@ const Products=[
           {
             "view": "left",
             "src": "http://assets.myntassets.com/assets/images/14615110/2021/9/10/b7995008-c498-4352-9040-62f5e6638da61631265003588-Roadster-Women-Shirts-6201631265003003-5.jpg"
+          },
+          {
+            "view": "size_representation",
+            "src": ""
           }
         ],
         "gender": "Women",
@@ -2810,10 +2810,6 @@ const Products=[
             "src": "http://assets.myntassets.com/assets/images/19512744/2022/11/21/a9623ffa-3cde-458a-9601-83f04af19a231669021272220-Stylecast-X-Hersheinbox-Women-Shirts-5461669021271687-1.jpg"
           },
           {
-            "view": "size_representation",
-            "src": ""
-          },
-          {
             "view": "back",
             "src": "http://assets.myntassets.com/assets/images/19512744/2022/11/21/e2216744-ac08-4b0a-918d-0f379072414d1669021272174-Stylecast-X-Hersheinbox-Women-Shirts-5461669021271687-3.jpg"
           },
@@ -2832,6 +2828,10 @@ const Products=[
           {
             "view": "left",
             "src": "http://assets.myntassets.com/assets/images/19512744/2022/11/21/276dd31e-9983-4a7e-a515-514f94dab2281669021272126-Stylecast-X-Hersheinbox-Women-Shirts-5461669021271687-5.jpg"
+          },
+          {
+            "view": "size_representation",
+            "src": ""
           }
         ],
         "gender": "Women",
@@ -3310,10 +3310,6 @@ const Products=[
             "src": "http://assets.myntassets.com/assets/images/18355882/2022/7/5/02518a42-dba7-46ac-a93f-9a4e9102cf581657017410710-plusS-Women-Shirts-5141657017410213-5.jpg"
           },
           {
-            "view": "size_representation",
-            "src": ""
-          },
-          {
             "view": "back",
             "src": "http://assets.myntassets.com/assets/images/18355882/2022/7/5/9d005b40-5eb1-4ec5-8b18-e39fd6df52811657017410754-plusS-Women-Shirts-5141657017410213-3.jpg"
           },
@@ -3324,6 +3320,10 @@ const Products=[
           {
             "view": "right",
             "src": "http://assets.myntassets.com/assets/images/18355882/2022/7/5/32f5c45e-7bac-4a1d-8e24-59993bbab95c1657017410734-plusS-Women-Shirts-5141657017410213-4.jpg"
+          },
+          {
+            "view": "size_representation",
+            "src": ""
           }
         ],
         "gender": "Women",
@@ -4230,7 +4230,11 @@ function buy(){
   document.getElementById("success").style.display="block"
   num=0
   document.getElementsByClassName("cart-list-length")[0].innerHTML=num
-
+  
+  let list = document.getElementById("cart-list");
+    while (list.hasChildNodes()) {
+    list.removeChild(list.firstChild);
+  }
 }
 
 function sortedstart(selectedarray){
