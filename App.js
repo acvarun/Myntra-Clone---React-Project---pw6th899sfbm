@@ -4070,6 +4070,10 @@ function handleSearch(){
     }
 }
 
+function clicksearch(){
+  document.getElementById("inputSearch").value=""
+}
+
 function handleClick1(e){
   document.getElementById("white").checked=false
   document.getElementById("sleeves").checked=false
