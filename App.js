@@ -4020,36 +4020,37 @@ function handleChange(){
     let sortedarray1=[...menFilt]
     if(sel1){
       sortedarray1.sort((a,b)=>{
-        return (a.year < b.year) ? 1 : (a.year > b.year) ? -1 : 0
+        return b.year-a.year
       })
     }
     else if(sel2){
       sortedarray1.sort((a,b)=>{
-        return (a.price < b.price) ? 1 : (a.price > b.price) ? -1 : 0
+        return a.price-b.price
       })
     }
     else if(sel3){
       sortedarray1.sort((a,b)=>{
-        return ((a.mrp-a.price) < (b.mrp-b.price)) ? 1 : ((a.mrp-a.price) > (b.mrp-b.price)) ? -1 : 0
+        return (b.mrp-b.price)-(a.mrp-a.price) 
       })
     }
     sortedstart(sortedarray1)
+    console.log(sortedarray1)
   }
   else if(women){
     let sortedarray2=[...womenFilt]
     if(sel1){
       sortedarray2.sort((a,b)=>{
-        return (a.year < b.year) ? 1 : (a.year > b.year) ? -1 : 0
+        return b.year-a.year
       })
     }
     else if(sel2){
       sortedarray2.sort((a,b)=>{
-        return (a.price < b.price) ? 1 : (a.price > b.price) ? -1 : 0
+        return (a.price)-(b.price)
       })
     }
     else if(sel3){
       sortedarray2.sort((a,b)=>{
-        return ((a.mrp-a.price) < (b.mrp-b.price)) ? 1 : ((a.mrp-a.price) > (b.mrp-b.price)) ? -1 : 0
+        return (a.mrp-a.price)-(b.mrp-b.price) 
       })
     }
     
