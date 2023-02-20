@@ -7,14 +7,20 @@
     <body>
         <div class="App">
             <nav>
-                <div class='icon-holder'><img src='https://constant.myntassets.com/web/assets/img/icon.5d108c858a0db793700f0be5d3ad1e120a01a500_2021.png' alt="logo" /></div>
-                <div class='type'>MEN</div>
-                <div class='type'>WOMEN</div>
-                <div class='type'>KIDS</div>
-                <input id="inputSearch" placeholder='Search your product here' onchange="handleSearch()"/>
-                <button id="searchbtn" onclick="clicksearch()">Search</button>
-                <div class='cart-holder' onclick="cart()"><img src="https://www.freeiconspng.com/thumbs/cart-icon/black-shopping-cart-icon-25.jpg" alt="cart"/></div>
-                <div class='cart-list-length' >0</div>
+                <div class="navdiv">
+                    <div class='icon-holder'><img src='https://constant.myntassets.com/web/assets/img/icon.5d108c858a0db793700f0be5d3ad1e120a01a500_2021.png' alt="logo" /></div>
+                    <div class='type'>MEN</div>
+                    <div class='type'>WOMEN</div>
+                    <div class='type'>KIDS</div>
+                </div>
+                <div class="navdiv">
+                    <input id="inputSearch" placeholder='Search your product here' onchange="handleSearch()"/>
+                    <button id="searchbtn" onclick="clicksearch()">Search</button>
+                </div>
+                <div class="navdiv">
+                    <div class='cart-holder' onclick="cart()"><img src="https://www.freeiconspng.com/thumbs/cart-icon/black-shopping-cart-icon-25.jpg" alt="cart"/></div>
+                    <div class='cart-list-length' >0</div>
+                </div>
             </nav>
             <div class='body'>
                 <div id="filter-holder">
@@ -62,12 +68,13 @@
                 <div id="discount">discount</div>
                 <div>Size Chart</div>
                 <div id="option">
-                    <div class="size-option" id="option1">S</div>
-                    <div class="size-option" id="option2">M</div>
-                    <div class="size-option" id="option3">L</div>
-                    <div class="size-option" id="option4">XL</div>
+                    <div class="size-option" id="option1" onclick="selectsize(this.id)">S</div>
+                    <div class="size-option" id="option2" onclick="selectsize(this.id)">M</div>
+                    <div class="size-option" id="option3" onclick="selectsize(this.id)">L</div>
+                    <div class="size-option" id="option4" onclick="selectsize(this.id)">XL</div>
                 </div>
                 <button onclick="addcart()">Add to Cart</button>
+                <div id="selectsizediv">select your size</div>
             </div>
             <button id="xbtn" onclick="xbtnclick()">X</button>
         </div>
@@ -86,6 +93,12 @@
             <div>
                 <button id="xbtn" onclick="xbtnclick()">X</button>
             </div>
+        </div>
+        <div id="empty-list">
+            <div>
+                There is nothing in your cart.Let's add some products
+            </div>
+            <button onclick="xbtnclick()">Add items to cart</button>
         </div>
         <script src="App.js"></script>
     </body>
