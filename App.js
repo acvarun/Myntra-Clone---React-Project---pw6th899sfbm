@@ -3850,7 +3850,7 @@ function sortedstart(selectedarray){
     let s=document.createElement("s")
     let span2=document.createElement("span")
     div.appendChild(span1)
-    let textnodespan1=document.createTextNode(selectedarray[i].price)
+    let textnodespan1=document.createTextNode("Rs "+selectedarray[i].price)
     span1.appendChild(textnodespan1)
     div.appendChild(s)
     let textnodes=document.createTextNode(selectedarray[i].mrp)
@@ -3933,45 +3933,49 @@ function catagory(){
   else{
     ls=false
   }
-  if(men && !ws && !ls){
-    initialpageMen()
-  }
-  if(women && !ws && !ls){
-    initialpageWomen()
-  }
-  if(men && ws && !ls){
-    let div=document.getElementsByClassName("indiv-tile-holder")
-    for(let i=0;i<div.length;i++){
-      let array=false
-      for(let j=0;j<menFiltWS.length;j++){
-        if(div[i].id==menFiltWS[j].productId){
-            array=true
-            break;
+  if(men){
+    if(!ws && !ls){
+      initialpageMen()
+    }
+    else if(ws && !ls){
+      let div=document.getElementsByClassName("indiv-tile-holder")
+      for(let i=0;i<div.length;i++){
+        let array=false
+        for(let j=0;j<menFiltWS.length;j++){
+          if(div[i].id==menFiltWS[j].productId){
+              array=true
+              break;
+          }
         }
-      }
-      if(array){
-          div[i].style.display="flex"
-      }
-      else{
-          div[i].style.display="none"
+        if(array){
+            div[i].style.display="flex"
+        }
+        else{
+            div[i].style.display="none"
+        }
       }
     }
   }
-  if(women && ws && !ls){
-    let div=document.getElementsByClassName("indiv-tile-holder")
-    for(let i=0;i<div.length;i++){
-      let array=false
-      for(let j=0;j<womenFiltWS.length;j++){
-        if(div[i].id==womenFiltWS[j].productId){
-            array=true
-            break;
+  else if(women){
+    if(!ws && !ls){
+      initialpageWomen()
+    }
+    else if(ws && !ls){
+      let div=document.getElementsByClassName("indiv-tile-holder")
+      for(let i=0;i<div.length;i++){
+        let array=false
+        for(let j=0;j<womenFiltWS.length;j++){
+          if(div[i].id==womenFiltWS[j].productId){
+              array=true
+              break;
+          }
         }
-      }
-      if(array){
-          div[i].style.display="flex"
-      }
-      else{
-          div[i].style.display="none"
+        if(array){
+            div[i].style.display="flex"
+        }
+        else{
+            div[i].style.display="none"
+        }
       }
     }
   }
@@ -4148,7 +4152,7 @@ function handleClick(e){
         if(Products[i].productId===node){
             document.getElementById("brandname").innerHTML=Products[i].brand
             document.getElementById("description").innerHTML=Products[i].additionalInfo
-            document.getElementById("price").innerHTML=Products[i].price
+            document.getElementById("price").innerHTML="Rs "+Products[i].price
             document.getElementById("mrp").innerHTML=Products[i].mrp
             document.getElementById("discount").innerHTML=Products[i].discountDisplayLabel
             document.getElementById("img1").src=Products[i].images[0].src
@@ -4233,7 +4237,7 @@ function addcart(){
       let s=document.createElement("s")
       let span2=document.createElement("span")
       div.appendChild(span1)
-      let textnodespan1=document.createTextNode(Products[i].price)
+      let textnodespan1=document.createTextNode("Rs "+Products[i].price)
       span1.appendChild(textnodespan1)
       div.appendChild(s)
       let textnodes=document.createTextNode(Products[i].mrp)
