@@ -3798,6 +3798,8 @@ const Products=[
         },
         "mediaData": []
       }]
+
+
 Products.sort((a,b)=>{
   return (a.year < b.year) ? 1 : (a.year > b.year) ? -1 : 0
 })
@@ -3826,39 +3828,43 @@ let sel2=false
 let sel3=false
 let id=0
 
-for(var i=0;i<Products.length;i++){
-  let node = document.createElement("div")
-  node.setAttribute('class','indiv-tile-holder')
-  document.getElementsByClassName('product-tile-holder')[0].appendChild(node)
-  let img = document.createElement("img")
-  img.setAttribute("src",Products[i].searchImage)
-  node.appendChild(img)
-  let h5 = document.createElement("h5")
-  node.appendChild(h5)
-  let textnodeh5 = document.createTextNode(Products[i].brand)
-  h5.appendChild(textnodeh5)
-  let p=document.createElement("p")
-  node.appendChild(p)
-  let textnodep = document.createTextNode(Products[i].additionalInfo)
-  p.appendChild(textnodep)
-  let div=document.createElement("div")
-  node.appendChild(div)
-  let span1=document.createElement("span")
-  let s=document.createElement("s")
-  let span2=document.createElement("span")
-  div.appendChild(span1)
-  let textnodespan1=document.createTextNode(Products[i].price)
-  span1.appendChild(textnodespan1)
-  div.appendChild(s)
-  let textnodes=document.createTextNode(Products[i].mrp)
-  s.appendChild(textnodes)
-  div.appendChild(span2)
-  let textnodespan2=document.createTextNode(Products[i].discountDisplayLabel)
-  span2.appendChild(textnodespan2)
-  span2.style.color="red"
-  node.setAttribute("id",Products[i].productId)
-  node.setAttribute("onclick", "handleClick(id)")
-}   
+function sortedstart(selectedarray){
+  for(var i=0;i<selectedarray.length;i++){
+    let node = document.createElement("div")
+    node.setAttribute('class','indiv-tile-holder')
+    document.getElementsByClassName('product-tile-holder')[0].appendChild(node)
+    let img = document.createElement("img")
+    img.setAttribute("src",selectedarray[i].searchImage)
+    node.appendChild(img)
+    let h2 = document.createElement("h2")
+    node.appendChild(h2)
+    let textnodeh2 = document.createTextNode(selectedarray[i].brand)
+    h2.appendChild(textnodeh2)
+    let p=document.createElement("p")
+    node.appendChild(p)
+    let textnodep = document.createTextNode(selectedarray[i].additionalInfo)
+    p.appendChild(textnodep)
+    let div=document.createElement("div")
+    node.appendChild(div)
+    let span1=document.createElement("span")
+    let s=document.createElement("s")
+    let span2=document.createElement("span")
+    div.appendChild(span1)
+    let textnodespan1=document.createTextNode(selectedarray[i].price)
+    span1.appendChild(textnodespan1)
+    div.appendChild(s)
+    let textnodes=document.createTextNode(selectedarray[i].mrp)
+    s.appendChild(textnodes)
+    div.appendChild(span2)
+    let textnodespan2=document.createTextNode(selectedarray[i].discountDisplayLabel)
+    span2.appendChild(textnodespan2)
+    span2.style.color="red"
+    node.setAttribute("id",selectedarray[i].productId)
+    node.setAttribute("onclick", "handleClick(id)")
+  }   
+}
+
+sortedstart(Products)
 
 function initialpageMen(){
 if(men){
@@ -4051,14 +4057,8 @@ function handleChange(){
 function handleSearch(){
     let inputSearch=document.getElementById("inputSearch");
     let searchFilter=inputSearch.value.toUpperCase();
-    if(searchFilter==0 && document.getElementById("male").checked){
-      initialpageMen()
-    }
-    else if(searchFilter==0 && document.getElementById("female").checked){
-      initialpageWomen()
-    }
     for(let i=0;i<Products.length;i++){
-        let match=(String)(document.getElementsByTagName("h5")[i].innerText.toUpperCase())
+        let match=(String)(document.getElementsByTagName("h2")[i].innerText.toUpperCase())
         if(match){
             if(match.indexOf(searchFilter)>-1){
                 document.getElementsByClassName("indiv-tile-holder")[i].style.display="";
@@ -4140,7 +4140,6 @@ function handleClick2(){
 }
 
 function handleClick(e){
-    console.log(e)
     let node=parseInt(e)
     id=node
     document.getElementsByClassName("App")[0].style.display="none"
@@ -4165,6 +4164,39 @@ function xbtnclick(){
   document.getElementById("product-modal").style.display="none"
   document.getElementById("cart-modal-content").style.display="none";
   document.getElementById("success").style.display="none"
+  document.getElementById("empty-list").style.display="none";
+}
+
+let size1=false
+let size2=false
+let size3=false
+let size4=false
+function selectsize(e){
+  console.log(e)
+  if(e=="option1"){
+    size1=true
+    size2=false
+    size3=false
+    size4=false
+  }
+  else if(e=="option2"){
+    size1=false
+    size2=true
+    size3=false
+    size4=false
+  }
+  else if(e=="option3"){
+    size1=false
+    size2=false
+    size3=true
+    size4=false
+  }
+  else if(e=="option4"){
+    size1=false
+    size2=false
+    size3=false
+    size4=true
+  }
 }
 
 let num=0;
@@ -4172,6 +4204,11 @@ let price1=0;
 let discount1=0;
 let total=0;
 function addcart(){
+  if(!size1 && !size2 && !size3 && !size4){
+    document.getElementById("selectsizediv").style.display="block"
+  }
+  else{
+  document.getElementById("selectsizediv").style.display="none"
   num++;
   document.getElementsByClassName("cart-list-length")[0].innerHTML=num
   for(let i=0;i<Products.length;i++){
@@ -4182,10 +4219,10 @@ function addcart(){
       let img = document.createElement("img")
       img.setAttribute("src",Products[i].searchImage)
       node1.appendChild(img)
-      let h5 = document.createElement("h5")
-      node1.appendChild(h5)
-      let textnodeh5 = document.createTextNode(Products[i].brand)
-      h5.appendChild(textnodeh5)
+      let h2 = document.createElement("h2")
+      node1.appendChild(h2)
+      let textnodeh2 = document.createTextNode(Products[i].brand)
+      h2.appendChild(textnodeh2)
       let p=document.createElement("p")
       node1.appendChild(p)
       let textnodep = document.createTextNode(Products[i].additionalInfo)
@@ -4212,16 +4249,23 @@ function addcart(){
   }
   xbtnclick()
 }
+}
 
 
 function cart(){
-  document.getElementById("totalitems").innerHTML=num
-  document.getElementById("TotalOriginalPrice").innerHTML=price1
-  document.getElementById("TotalDiscount").innerHTML=discount1
-  document.getElementById("FinalPrice").innerHTML=total
-  document.getElementsByClassName("App")[0].style.display="none"
-  document.getElementById("cart-modal-content").style.display="flex";
-  document.getElementById("buybtn").style.display=""
+  if(num==0){
+    document.getElementsByClassName("App")[0].style.display="none"
+    document.getElementById("empty-list").style.display="flex";
+  }
+  else{
+    document.getElementById("totalitems").innerHTML=num
+    document.getElementById("TotalOriginalPrice").innerHTML=price1
+    document.getElementById("TotalDiscount").innerHTML=discount1
+    document.getElementById("FinalPrice").innerHTML=total
+    document.getElementsByClassName("App")[0].style.display="none"
+    document.getElementById("cart-modal-content").style.display="flex";
+    document.getElementById("buybtn").style.display=""
+  }
 }
 
 function buy(){
@@ -4235,40 +4279,4 @@ function buy(){
     while (list.hasChildNodes()) {
     list.removeChild(list.firstChild);
   }
-}
-
-function sortedstart(selectedarray){
-  for(var i=0;i<selectedarray.length;i++){
-    let node = document.createElement("div")
-    node.setAttribute('class','indiv-tile-holder')
-    document.getElementsByClassName('product-tile-holder')[0].appendChild(node)
-    let img = document.createElement("img")
-    img.setAttribute("src",selectedarray[i].searchImage)
-    node.appendChild(img)
-    let h5 = document.createElement("h5")
-    node.appendChild(h5)
-    let textnodeh5 = document.createTextNode(selectedarray[i].brand)
-    h5.appendChild(textnodeh5)
-    let p=document.createElement("p")
-    node.appendChild(p)
-    let textnodep = document.createTextNode(selectedarray[i].additionalInfo)
-    p.appendChild(textnodep)
-    let div=document.createElement("div")
-    node.appendChild(div)
-    let span1=document.createElement("span")
-    let s=document.createElement("s")
-    let span2=document.createElement("span")
-    div.appendChild(span1)
-    let textnodespan1=document.createTextNode(selectedarray[i].price)
-    span1.appendChild(textnodespan1)
-    div.appendChild(s)
-    let textnodes=document.createTextNode(selectedarray[i].mrp)
-    s.appendChild(textnodes)
-    div.appendChild(span2)
-    let textnodespan2=document.createTextNode(selectedarray[i].discountDisplayLabel)
-    span2.appendChild(textnodespan2)
-    span2.style.color="red"
-    node.setAttribute("id",selectedarray[i].productId)
-    node.setAttribute("onclick", "handleClick(id)")
-  }   
 }
