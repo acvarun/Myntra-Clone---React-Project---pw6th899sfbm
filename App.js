@@ -3799,9 +3799,8 @@ const Products=[
         "mediaData": []
       }]
 
-
 Products.sort((a,b)=>{
-  return (a.year < b.year) ? 1 : (a.year > b.year) ? -1 : 0
+  return b.year-a.year
 })
 
 const menFilt=Products.filter((product)=>{
