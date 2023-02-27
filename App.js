@@ -3821,7 +3821,6 @@ const womenFiltWS=womenFilt.filter((product)=>{
 let men=true
 let women=false
 let ws=false
-let ls=false
 let sel1=true
 let sel2=false
 let sel3=false
@@ -3911,7 +3910,7 @@ function initialpageWomen(){
   }
   }
 
-function catagory(){
+function check(){
   if(document.getElementById("male").checked){
     men=true
     women=false
@@ -3926,17 +3925,11 @@ function catagory(){
   else{
     ws=false
   }
-  if(document.getElementById("sleeves").checked){
-    ls=true
-  }
-  else{
-    ls=false
-  }
   if(men){
-    if(!ws && !ls){
+    if(!ws){
       initialpageMen()
     }
-    else if(ws && !ls){
+    else if(ws){
       let div=document.getElementsByClassName("indiv-tile-holder")
       for(let i=0;i<div.length;i++){
         let array=false
@@ -3956,10 +3949,10 @@ function catagory(){
     }
   }
   else if(women){
-    if(!ws && !ls){
+    if(!ws){
       initialpageWomen()
     }
-    else if(ws && !ls){
+    else if(ws){
       let div=document.getElementsByClassName("indiv-tile-holder")
       for(let i=0;i<div.length;i++){
         let array=false
@@ -3978,10 +3971,6 @@ function catagory(){
       }
     }
   }
-}
-
-function check(){
-  catagory()
 }
 
 function handleChange(){
@@ -4053,7 +4042,7 @@ function handleChange(){
       })
     }
     
-    sortedstart(sortedarray2)
+    sortedstart(sortedarray2)    
   }
 }
 
@@ -4105,7 +4094,7 @@ function handleClick1(e){
 }
 
 function handleClick2(){
-    if(men && ws && ls){
+    if(men && ws){
         for(let i=0;i<div.length;i++){
             let array=false
             for(let j=0;j<menFiltWS.length;j++){
@@ -4123,7 +4112,7 @@ function handleClick2(){
             }
         }
     }
-    else if(women && ws && ls){
+    else if(women && ws){
         for(let i=0;i<div.length;i++){
             let array=false
             for(let j=0;j<womenFiltWS.length;j++){
