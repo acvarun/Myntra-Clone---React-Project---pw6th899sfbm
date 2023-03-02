@@ -4069,7 +4069,6 @@ function clicksearch(){
 
 function handleClick1(e){
   document.getElementById("white").checked=false
-  document.getElementById("sleeves").checked=false
     if(e==="male"){
         men=true
         women=false
