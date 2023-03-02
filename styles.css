@@ -271,3 +271,23 @@ s{
 #selectsizediv{
     display: none;
 }
+#footer{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px;
+}
+#footer h5{
+    color: black;
+}
+#footer div{
+    color: grey;
+}
+#footer i{
+    padding: 0px 5px;
+}
+#footer img{
+    width: 120px;
+    height: 38px;
+}
